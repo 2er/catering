@@ -1,0 +1,2 @@
+webpackJsonp([8],{HqcP:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var l={render:function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"rating_page"},[this._v("\n  1111\n")])},staticRenderFns:[]},s=n("VU/8")(null,l,!1,null,null,null);t.default=s.exports}});
+//# sourceMappingURL=8.6232f29f442e4ac42808.js.map

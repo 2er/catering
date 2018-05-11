@@ -1,0 +1,2 @@
+webpackJsonp([7],{Tyvu:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var l={render:function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"rating_page"},[this._v("\n  33333\n")])},staticRenderFns:[]},s=n("VU/8")(null,l,!1,null,null,null);t.default=s.exports}});
+//# sourceMappingURL=7.90ca4de621890fa9a70e.js.map
