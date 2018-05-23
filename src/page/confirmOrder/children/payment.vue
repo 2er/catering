@@ -25,7 +25,7 @@
         <div class="order_icon_contaienr">
           <span>支付方式</span>
         </div>
-        <span class="order_payment">{{payDetail.payment === '-1' ? '现金支付' : '在线支付'}}</span>
+        <span class="order_payment">{{payDetail.payment === '-1' ? '到店支付' : '在线支付'}}</span>
       </section>
     </section>
     <p class="determine" @click="confrimPay">确认支付</p>
@@ -36,7 +36,7 @@
 <script>
 import headTop from '../../../components/header/head'
 import {mapState, mapMutations} from 'vuex'
-import {queryOrder} from '../../../service/getData'
+import {queryOrder, payOrder} from '../../../service/getData'
 import alertTip from '../../../components/common/alertTip'
 
 export default {
@@ -125,10 +125,16 @@ export default {
       }, 1000)
     },
     // 确认付款
-    confrimPay () {
-      this.showAlert = true
-      this.alertText = '当前环境无法支付'
-      this.gotoOrders = true
+    async confrimPay () {
+      this.showLoading = true
+      let payData = await payOrder({order_id: this.orderMessage.order_id, pay_type: 'wx', source: 'catering'})
+      this.showLoading = false
+      if (payData.return_code === '0000') {
+        window.location.href = payData.data.pay_url
+      } else {
+        this.showAlert = true
+        this.alertText = payData.return_msg
+      }
     },
     // 关闭提示框，跳转到订单列表页
     closeTipFun () {

@@ -93,3 +93,9 @@ export const queryOrder = (params) => fetch('', {
   method: 'member.queryorder',
   params: params
 }, 'POST')
+
+/**
+ * 订单支付
+ */
+
+export const payOrder = (params) => fetch('', {method: 'member.orderpay', params: params}, 'POST')

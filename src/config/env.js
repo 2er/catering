@@ -19,14 +19,16 @@ let wxAccessTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/access_token'
 let wxRefreshTokenUrl = 'https://api.weixin.qq.com/sns/oauth2/refresh_token'
 let wxUserInfoUrl = 'https://api.weixin.qq.com/sns/userinfo'
 let wxCheckTokenUrl = 'https://api.weixin.qq.com/sns/auth'
-let wxOauth = 'http://192.168.2.160:8081/sellerpok/index.php/openapi/catering_route/wxOauth'
+let wxOauth
 
 if (process.env.NODE_ENV === 'development') {
   baseUrl = 'http://192.168.2.160:8081/sellerpok/index.php/openapi/catering_route/accept'
   imgBaseUrl = 'http://192.168.2.160:8081/sellerpok/index.php/openapi/catering_route/accept'
+  wxOauth = 'http://192.168.2.160:8081/sellerpok/index.php/openapi/catering_route/wxOauth'
 } else if (process.env.NODE_ENV === 'production') {
-  baseUrl = 'http://192.168.2.160:8081/sellerpok/index.php/openapi/catering_route/accept'
-  imgBaseUrl = 'http://192.168.2.160:8081/sellerpok/index.php/openapi/catering_route/accept'
+  baseUrl = 'http://ceshi6.sdykt.com.cn:1280/sellerpok/index.php/openapi/catering_route/accept'
+  imgBaseUrl = 'http://ceshi6.sdykt.com.cn:1280/sellerpok/index.php/openapi/catering_route/accept'
+  wxOauth = 'http://ceshi6.sdykt.com.cn:1280/sellerpok/index.php/openapi/catering_route/wxOauth'
 }
 
 export {
